@@ -40,6 +40,15 @@ typedef void * Addr;
 /* MODULE   MY_ALLOCATOR */
 /*--------------------------------------------------------------------------*/
 
+
+void printFreeList();
+void splitToGetSomeInSection(int sectionNeeded);
+void splitSection(int s);
+Addr getBuddyAddress(Addr start, int size);
+
+
+
+
 unsigned int init_allocator(unsigned int _basic_block_size, 
 			    unsigned int _length); 
 /* This function initializes the memory allocator and makes a portion of 
@@ -61,5 +70,8 @@ Addr my_malloc(unsigned int _length);
 int my_free(Addr _a); 
 /* Frees the section of physical memory previously allocated 
    using ’my_malloc’. Returns 0 if everything ok. */ 
+
+
+
 
 #endif 
